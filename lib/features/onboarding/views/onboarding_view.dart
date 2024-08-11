@@ -68,11 +68,15 @@ class OnboardingView extends GetView<OnboardingController> {
             }),
             CustomButton(
               text: "Create Account",
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed("/register");
+              },
             ).marginOnly(left: 7.w, right: 7.w, top: 2.h, bottom: 1.h),
             CustomButtonOutline(
               text: "Sign In as Guest",
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed("/login");
+              },
             ).marginSymmetric(horizontal: 7.w).marginOnly(bottom: 2.h),
           ],
         ),

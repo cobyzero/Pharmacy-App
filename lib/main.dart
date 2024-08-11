@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
+          defaultTransition: Transition.cupertino,
           title: 'Material App',
           theme: theme,
           initialRoute: "/splash",
