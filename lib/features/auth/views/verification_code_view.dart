@@ -34,7 +34,7 @@ class VerificationCodeView extends GetView<AuthController> {
                         CustomButton(
                           text: "Go to Homepage",
                           onPressed: () {
-                            Get.back();
+                            Get.toNamed("/navigator");
                           },
                         ),
                       ],
