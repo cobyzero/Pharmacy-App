@@ -8,10 +8,20 @@ class CustomInput extends StatefulWidget {
     required this.hintText,
     required this.icon,
     this.controller,
+    this.suffix,
+    this.backgroundColor,
+    this.borderColor,
+    this.hintColor,
+    this.active = true,
   });
   final String hintText;
   final IconData icon;
   final TextEditingController? controller;
+  final Widget? suffix;
+  final Color? backgroundColor;
+  final Color? borderColor;
+  final Color? hintColor;
+  final bool active;
   @override
   State<CustomInput> createState() => _CustomInputState();
 }
@@ -40,26 +50,35 @@ class _CustomInputState extends State<CustomInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: widget.active,
       controller: widget.controller,
       focusNode: focus,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Palette.white,
+        fillColor: widget.backgroundColor ?? Palette.white,
+        suffixIcon: widget.suffix,
         prefixIcon: Icon(
           widget.icon,
           size: 20.sp,
-          color: focus.hasFocus ? Palette.primary : Palette.gray,
+          color: focus.hasFocus
+              ? widget.hintColor ?? Palette.primary
+              : widget.hintColor ?? Palette.blueLight,
         ),
         hintText: widget.hintText,
         hintStyle: TextStyle(
-          color: focus.hasFocus ? Palette.black : Palette.gray,
+          color:
+              focus.hasFocus ? Palette.black : widget.hintColor ?? Palette.gray,
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: widget.borderColor ?? Palette.white2),
+          borderRadius: BorderRadius.circular(12.sp),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Palette.white2),
+          borderSide: BorderSide(color: widget.borderColor ?? Palette.white2),
           borderRadius: BorderRadius.circular(12.sp),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Palette.black),
+          borderSide: BorderSide(color: widget.borderColor ?? Palette.black),
           borderRadius: BorderRadius.circular(12.sp),
         ),
       ),
