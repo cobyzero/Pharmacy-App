@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
+import 'package:app_ui/src/utils/utils.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomInputVerification extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
 class ContactItem extends StatelessWidget {
@@ -32,7 +31,7 @@ class ContactItem extends StatelessWidget {
                   children: [
                     const Texts.heavy(
                       "Harry Johnson",
-                      fontSize: 10,
+                      fontSize: 14,
                       textOverflow: TextOverflow.fade,
                       alignment: TextAlign.center,
                     ).marginOnly(bottom: .5.h),
@@ -42,7 +41,7 @@ class ContactItem extends StatelessWidget {
                         Icon(
                           Icons.star,
                           color: Palette.primary,
-                          size: 12.sp,
+                          size: 15.sp,
                         ).marginOnly(right: 1.w),
                         const Texts.roman(
                           "4.9",

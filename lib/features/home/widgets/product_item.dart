@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
 class ProductItem extends StatelessWidget {
@@ -48,7 +47,7 @@ class ProductItem extends StatelessWidget {
                     children: [
                       Texts.heavy(
                         text,
-                        fontSize: 10,
+                        fontSize: 14,
                         textOverflow: TextOverflow.fade,
                         alignment: TextAlign.center,
                       ).marginOnly(bottom: .5.h),

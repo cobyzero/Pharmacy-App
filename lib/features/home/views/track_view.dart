@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
-import 'package:pharmacy_app/core/widgets/custom_input.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
 import 'package:sizer/sizer.dart';
 

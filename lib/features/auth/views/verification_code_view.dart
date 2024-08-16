@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
-import 'package:pharmacy_app/core/widgets/custom_button.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:pharmacy_app/features/auth/controllers/auth_controller.dart';
 import 'package:pharmacy_app/features/auth/widgets/input_verification.dart';
 import 'package:sizer/sizer.dart';
@@ -85,7 +83,7 @@ class VerificationCodeView extends GetView<AuthController> {
                 alignment: Alignment.center,
                 child: Texts.heavy(
                   "02:39",
-                  fontSize: 12,
+                  fontSize: 15,
                 ),
               ),
             ],

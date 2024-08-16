@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
 class StatusItem extends StatelessWidget {
@@ -28,12 +27,12 @@ class StatusItem extends StatelessWidget {
           children: [
             Texts.heavy(
               title,
-              fontSize: 10,
+              fontSize: 14,
               color: active ? Palette.black : Palette.gray,
             ).marginOnly(bottom: 1.5.h),
             Texts.roman(
               subtitle,
-              fontSize: 9,
+              fontSize: 13,
             ),
           ],
         ),

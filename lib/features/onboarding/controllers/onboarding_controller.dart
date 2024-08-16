@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pharmacy_app/core/models/onboarding_model.dart';
@@ -8,21 +9,21 @@ class OnboardingController extends GetxController {
   static final onboardings = [
     OnboardingModel(
       0,
-      image: "Header_1.png",
+      image: Assets.images.header1.path,
       title: "Cash on Delivery or E-payment",
       description:
           "Our delivery will ensure your items are delivered right to the door steps",
     ),
     OnboardingModel(
       1,
-      image: "Header_2.png",
+      image: Assets.images.header2.path,
       title: "Delivery Right to Your Door Step",
       description:
           "Our delivery will ensure your items are delivered right to the door steps",
     ),
     OnboardingModel(
       2,
-      image: "Header_3.png",
+      image: Assets.images.header3.path,
       title: "Welcome to Tracky",
       description:
           "Tracky is the best solution to deliver and track goods from local and world shipping.",

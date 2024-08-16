@@ -4,6 +4,7 @@ import 'package:pharmacy_app/core/bindings/categories_binding.dart';
 import 'package:pharmacy_app/core/bindings/home_binding.dart';
 import 'package:pharmacy_app/core/bindings/onboarding_binding.dart';
 import 'package:pharmacy_app/core/bindings/product_binding.dart';
+import 'package:pharmacy_app/core/bindings/product_check_binding.dart';
 import 'package:pharmacy_app/features/auth/views/login_view.dart';
 import 'package:pharmacy_app/features/auth/views/register_view.dart';
 import 'package:pharmacy_app/features/auth/views/verification_code_view.dart';
@@ -11,6 +12,7 @@ import 'package:pharmacy_app/features/categories/views/categories_view.dart';
 import 'package:pharmacy_app/features/home/views/track_view.dart';
 import 'package:pharmacy_app/features/navigator/navigator_view.dart';
 import 'package:pharmacy_app/features/onboarding/views/onboarding_view.dart';
+import 'package:pharmacy_app/features/product/views/product_check_view.dart';
 import 'package:pharmacy_app/features/product/views/product_view.dart';
 import 'package:pharmacy_app/features/splash/splash_view.dart';
 
@@ -58,5 +60,10 @@ final getRouter = <GetPage>[
     name: "/categories",
     page: () => const CategoriesView(),
     binding: CategoriesBinding(),
+  ),
+  GetPage(
+    name: "/productCheck",
+    page: () => const ProductCheckView(),
+    binding: ProductCheckBinding(),
   ),
 ];

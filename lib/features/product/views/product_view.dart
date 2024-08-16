@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
-import 'package:pharmacy_app/core/widgets/custom_button.dart';
-import 'package:pharmacy_app/core/widgets/custom_button_outline.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
 import 'package:pharmacy_app/features/product/widgets/contact_item.dart';
 import 'package:pharmacy_app/features/product/widgets/status_item.dart';
@@ -80,7 +77,7 @@ class ProductView extends GetView<HomeController> {
                           children: [
                             const Texts.heavy(
                               "MM09130520",
-                              fontSize: 11,
+                              fontSize: 14,
                             ).marginOnly(bottom: 1.h),
                             const Texts.roman(
                               "Track Number",
@@ -92,7 +89,7 @@ class ProductView extends GetView<HomeController> {
                           children: [
                             const Texts.heavy(
                               "1-3 Hours",
-                              fontSize: 11,
+                              fontSize: 14,
                             ).marginOnly(bottom: 1.h),
                             const Texts.roman(
                               "Estimate Time",
@@ -134,9 +131,9 @@ class ProductView extends GetView<HomeController> {
                           active: false,
                         ).marginOnly(bottom: 4.h),
                         CustomButton(
-                          text: "Report an Issue",
+                          text: "Mark as Done",
                           onPressed: () {},
-                        ).marginOnly(bottom: 4.h),
+                        ).marginOnly(bottom: 2.h),
                         CustomButtonOutline(
                           text: "Report an Issue",
                           onPressed: () {},

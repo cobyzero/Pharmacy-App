@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/const.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
 class SplashView extends StatefulWidget {
@@ -33,7 +31,7 @@ class _SplashViewState extends State<SplashView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "${imageAsset}logo.png",
+              Assets.images.logo.path,
               width: 25.w,
               fit: BoxFit.cover,
             ),

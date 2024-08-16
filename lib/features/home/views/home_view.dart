@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/const.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
-import 'package:pharmacy_app/core/widgets/custom_input.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
 import 'package:pharmacy_app/features/home/widgets/feature_item.dart';
 import 'package:pharmacy_app/features/home/widgets/product_item.dart';
@@ -27,7 +24,7 @@ class HomeView extends GetView<HomeController> {
                     Row(
                       children: [
                         Image.asset(
-                          "${imageAsset}logo.png",
+                          Assets.images.logo.path,
                           fit: BoxFit.cover,
                           width: 10.w,
                         ).marginOnly(right: 2.w),
@@ -57,7 +54,7 @@ class HomeView extends GetView<HomeController> {
                               ).marginOnly(bottom: 1.h),
                               const Texts.heavy(
                                 '\$3.382.00',
-                                fontSize: 14,
+                                fontSize: 17,
                               ),
                             ],
                           ),
@@ -65,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                             children: [
                               const Texts.medium(
                                 'Top Up',
-                                fontSize: 11,
+                                fontSize: 14,
                               ).marginOnly(right: 3.w),
                               Container(
                                 decoration: BoxDecoration(
@@ -76,7 +73,7 @@ class HomeView extends GetView<HomeController> {
                                 child: Icon(
                                   Icons.add,
                                   color: Colors.white,
-                                  size: 11.sp,
+                                  size: 13.sp,
                                 ),
                               ),
                             ],
@@ -97,7 +94,7 @@ class HomeView extends GetView<HomeController> {
                         backgroundColor: Palette.primary,
                         suffix: Icon(
                           Icons.qr_code_scanner,
-                          size: 17.sp,
+                          size: 18.sp,
                           color: Palette.blueLight,
                         ),
                       ),
@@ -106,23 +103,13 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ).marginOnly(bottom: 1.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Texts.heavy(
-                  "Categories",
-                  fontSize: 13,
-                ),
-                TextButton(
-                  onPressed: () {
-                    Get.toNamed("/categories");
-                  },
-                  child: const Texts.roman(
-                    "View all",
-                  ),
-                ),
-              ],
-            ).marginSymmetric(vertical: 2.h, horizontal: 5.w),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: const Texts.heavy(
+                "Features",
+                fontSize: 16,
+              ).marginSymmetric(vertical: 2.h, horizontal: 5.w),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -148,11 +135,38 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
               ],
+            ).marginSymmetric(horizontal: 5.w),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: FeatureItem(
+                    onTap: () {},
+                    text: "Help Center",
+                    icon: Icons.help_center,
+                  ),
+                ),
+                Expanded(
+                  child: FeatureItem(
+                    onTap: () {},
+                    text: "Wallet",
+                    icon: Icons.wallet,
+                  ).marginSymmetric(horizontal: 2.w),
+                ),
+                Expanded(
+                  child: FeatureItem(
+                    onTap: () {},
+                    text: "Others",
+                    icon: Icons.lock,
+                  ),
+                ),
+              ],
             ).marginOnly(bottom: 3.h, right: 5.w, left: 5.w),
             Align(
               alignment: Alignment.centerLeft,
               child: const Texts.heavy(
                 "Services and Product",
+                fontSize: 16,
               ).marginOnly(bottom: 2.h, left: 5.w),
             ),
             ListView(
@@ -166,23 +180,25 @@ class HomeView extends GetView<HomeController> {
                     Get.toNamed("/product");
                   },
                   text: "MM09132005",
-                ).marginOnly(bottom: 2.h),
+                ).marginOnly(bottom: 1.h),
+                ProductItem(
+                  onTap: () {
+                    Get.toNamed("/productCheck");
+                  },
+                  text: "MM09132005",
+                ).marginOnly(bottom: 1.h),
                 ProductItem(
                   onTap: () {},
                   text: "MM09132005",
-                ).marginOnly(bottom: 2.h),
+                ).marginOnly(bottom: 1.h),
                 ProductItem(
                   onTap: () {},
                   text: "MM09132005",
-                ).marginOnly(bottom: 2.h),
+                ).marginOnly(bottom: 1.h),
                 ProductItem(
                   onTap: () {},
                   text: "MM09132005",
-                ).marginOnly(bottom: 2.h),
-                ProductItem(
-                  onTap: () {},
-                  text: "MM09132005",
-                ).marginOnly(bottom: 2.h),
+                ).marginOnly(bottom: 1.h),
               ],
             ).marginSymmetric(horizontal: 5.w)
           ],

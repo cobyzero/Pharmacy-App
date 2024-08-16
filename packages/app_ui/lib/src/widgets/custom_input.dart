@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
+import 'package:app_ui/src/utils/utils.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomInput extends StatefulWidget {
@@ -65,10 +66,10 @@ class _CustomInputState extends State<CustomInput> {
               : widget.hintColor ?? Palette.blueLight,
         ),
         hintText: widget.hintText,
-        hintStyle: TextStyle(
-          color:
-              focus.hasFocus ? Palette.black : widget.hintColor ?? Palette.gray,
-        ),
+        hintStyle: GoogleFonts.poppins().copyWith(
+            color: focus.hasFocus
+                ? Palette.black
+                : widget.hintColor ?? Palette.gray),
         disabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: widget.borderColor ?? Palette.white2),
           borderRadius: BorderRadius.circular(12.sp),

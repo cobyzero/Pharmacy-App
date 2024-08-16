@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
+
+import 'utils.dart';
 
 class Texts extends StatelessWidget {
   final String text;
@@ -73,7 +75,7 @@ class Texts extends StatelessWidget {
     super.key,
     this.height = 1,
     this.fontFamily,
-    this.fontSize = 10,
+    this.fontSize = 14,
     this.alignment = TextAlign.left,
     this.underline = false,
     this.color = Palette.gray,
@@ -94,7 +96,7 @@ class Texts extends StatelessWidget {
         child: Text(
           text,
           textAlign: alignment,
-          style: TextStyle(
+          style: (style ?? GoogleFonts.poppins()).copyWith(
             color: color,
             fontSize: fontSize.sp,
             height: height,

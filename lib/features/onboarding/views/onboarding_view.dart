@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pharmacy_app/core/utils/const.dart';
-import 'package:pharmacy_app/core/utils/palette.dart';
-import 'package:pharmacy_app/core/utils/texts.dart';
-import 'package:pharmacy_app/core/widgets/custom_button.dart';
-import 'package:pharmacy_app/core/widgets/custom_button_outline.dart';
+import 'package:app_ui/app_ui.dart';
 import 'package:pharmacy_app/features/onboarding/controllers/onboarding_controller.dart';
 import 'package:sizer/sizer.dart';
 
@@ -26,7 +22,7 @@ class OnboardingView extends GetView<OnboardingController> {
                       (e) => Column(
                         children: [
                           Image.asset(
-                            "$imageAsset${e.image}",
+                            e.image,
                             width: 100.w,
                             fit: BoxFit.cover,
                           ).marginOnly(bottom: 3.h),
@@ -34,7 +30,7 @@ class OnboardingView extends GetView<OnboardingController> {
                           Texts.roman(
                             e.description,
                             color: Palette.gray,
-                            fontSize: 10,
+                            fontSize: 14,
                             alignment: TextAlign.center,
                             padding: EdgeInsets.symmetric(
                               horizontal: 10.w,

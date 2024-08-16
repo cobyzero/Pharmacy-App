@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/core/widgets/custom_input_verification.dart';
+import 'package:app_ui/app_ui.dart';
 
 class InputVerification extends StatefulWidget {
   const InputVerification({super.key});
