@@ -29,15 +29,13 @@ class _NavigatorViewState extends State<NavigatorView> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: PageView(
-          physics: const NeverScrollableScrollPhysics(),
-          controller: pageController,
-          children: [
-            HomeView(),
-            Container(),
-          ],
-        ),
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
+        children: [
+          HomeView(),
+          Container(),
+        ],
       ),
     );
   }

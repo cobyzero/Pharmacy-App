@@ -1,5 +1,5 @@
+import 'package:easy_padding/easy_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
@@ -27,7 +27,7 @@ class FeatureItem extends StatelessWidget {
               icon,
               size: 25.sp,
               color: Palette.primary,
-            ).marginOnly(bottom: .5.h),
+            ).only(bottom: .5.h),
             Texts.medium(
               text,
               fontSize: 13,

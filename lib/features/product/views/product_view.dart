@@ -1,13 +1,13 @@
+import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
-import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pharmacy_app/features/product/widgets/contact_item.dart';
 import 'package:pharmacy_app/features/product/widgets/status_item.dart';
 import 'package:pharmacy_app/features/product/widgets/status_linear.dart';
 import 'package:sizer/sizer.dart';
 
-class ProductView extends GetView<HomeController> {
+class ProductView extends StatelessWidget {
   const ProductView({super.key});
 
   @override
@@ -24,7 +24,7 @@ class ProductView extends GetView<HomeController> {
                 icon: const Icon(
                   Icons.arrow_back_ios,
                 ),
-                onPressed: () => {Get.back()},
+                onPressed: context.pop,
               ),
               title: const Texts.heavy(
                 "Detail Location",
@@ -64,11 +64,11 @@ class ProductView extends GetView<HomeController> {
                     const Texts.heavy(
                       "Your Package on The Way",
                       fontSize: 14,
-                    ).marginOnly(bottom: 1.5.h),
+                    ).only(bottom: 1.5.h),
                     const Texts.roman(
                       "Arriving at pick up point in 2 mins",
-                    ).marginOnly(bottom: 3.h),
-                    const ContactItem().marginOnly(bottom: 2.h),
+                    ).only(bottom: 3.h),
+                    const ContactItem().only(bottom: 2.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -78,7 +78,7 @@ class ProductView extends GetView<HomeController> {
                             const Texts.heavy(
                               "MM09130520",
                               fontSize: 14,
-                            ).marginOnly(bottom: 1.h),
+                            ).only(bottom: 1.h),
                             const Texts.roman(
                               "Track Number",
                             ),
@@ -90,20 +90,20 @@ class ProductView extends GetView<HomeController> {
                             const Texts.heavy(
                               "1-3 Hours",
                               fontSize: 14,
-                            ).marginOnly(bottom: 1.h),
+                            ).only(bottom: 1.h),
                             const Texts.roman(
                               "Estimate Time",
                             ),
                           ],
                         ),
                       ],
-                    ).marginOnly(bottom: 1.h),
+                    ).only(bottom: 1.h),
                     Container(
                       width: double.infinity,
                       height: 1,
                       color: Palette.white2,
                       margin: EdgeInsets.symmetric(vertical: 1.h),
-                    ).marginOnly(bottom: 2.h),
+                    ).only(bottom: 2.h),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -129,19 +129,19 @@ class ProductView extends GetView<HomeController> {
                           title: 'Completed',
                           subtitle: '18 January 2022, 4:38 PM',
                           active: false,
-                        ).marginOnly(bottom: 4.h),
+                        ).only(bottom: 4.h),
                         CustomButton(
                           text: "Mark as Done",
                           onPressed: () {},
-                        ).marginOnly(bottom: 2.h),
+                        ).only(bottom: 2.h),
                         CustomButtonOutline(
                           text: "Report an Issue",
                           onPressed: () {},
-                        ).marginOnly(bottom: 4.h),
+                        ).only(bottom: 4.h),
                       ],
                     ),
                   ],
-                ).marginSymmetric(horizontal: 5.w),
+                ).symmetric(horizontal: 5.w),
               ),
             ),
           ],

@@ -1,10 +1,9 @@
+import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
-import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
 import 'package:sizer/sizer.dart';
 
-class CategoriesView extends GetView<HomeController> {
+class CategoriesView extends StatelessWidget {
   const CategoriesView({super.key});
 
   @override
@@ -46,7 +45,7 @@ class CategoriesView extends GetView<HomeController> {
                         Icons.phone,
                         color: Palette.primary,
                         size: 17.sp,
-                      ).marginOnly(right: 2.w),
+                      ).only(right: 2.w),
                       const Texts.medium(
                         "App Guide",
                         fontSize: 11,
