@@ -1,5 +1,5 @@
+import 'package:easy_padding/easy_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
@@ -25,7 +25,7 @@ class ContactItem extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   child: Icon(Icons.person),
-                ).marginOnly(right: 3.w),
+                ).only(right: 3.w),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -34,7 +34,7 @@ class ContactItem extends StatelessWidget {
                       fontSize: 14,
                       textOverflow: TextOverflow.fade,
                       alignment: TextAlign.center,
-                    ).marginOnly(bottom: .5.h),
+                    ).only(bottom: .5.h),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -42,7 +42,7 @@ class ContactItem extends StatelessWidget {
                           Icons.star,
                           color: Palette.primary,
                           size: 15.sp,
-                        ).marginOnly(right: 1.w),
+                        ).only(right: 1.w),
                         const Texts.roman(
                           "4.9",
                         ),

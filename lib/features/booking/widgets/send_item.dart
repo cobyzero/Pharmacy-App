@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({
+class SendItem extends StatelessWidget {
+  const SendItem({
     super.key,
     required this.onTap,
     required this.text,
@@ -52,15 +52,15 @@ class ProductItem extends StatelessWidget {
                         alignment: TextAlign.center,
                       ).only(bottom: .5.h),
                       const Texts.roman(
-                        "Processed at sort facility",
+                        "1 - 2 Days",
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            const Texts.roman(
-              "2 Hrs",
+            const Texts.medium(
+              '\$42.00',
             ),
           ],
         ),

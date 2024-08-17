@@ -1,10 +1,9 @@
+import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
-import 'package:pharmacy_app/features/home/controllers/home_controller.dart';
 import 'package:sizer/sizer.dart';
 
-class TrackView extends GetView<HomeController> {
+class TrackView extends StatelessWidget {
   const TrackView({super.key});
 
   @override
@@ -20,9 +19,12 @@ class TrackView extends GetView<HomeController> {
       body: SafeArea(
         child: const Column(
           children: [
-            CustomInput(
-              hintText: "Enter track number",
-              icon: Icons.search,
+            Hero(
+              tag: "search",
+              child: CustomInput(
+                hintText: "Enter track number",
+                icon: Icon(Icons.search),
+              ),
             ),
             Expanded(
               child: Center(
@@ -32,7 +34,7 @@ class TrackView extends GetView<HomeController> {
               ),
             )
           ],
-        ).marginSymmetric(horizontal: 5.w),
+        ).symmetric(horizontal: 5.w),
       ),
     );
   }

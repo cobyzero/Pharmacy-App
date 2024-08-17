@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sizer/sizer.dart';
 
 class SplashView extends StatefulWidget {
@@ -15,7 +15,8 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     Future.delayed(const Duration(seconds: 2)).whenComplete(
       () {
-        Get.offAndToNamed("/onboarding");
+        // ignore: use_build_context_synchronously
+        context.go("/onboarding");
       },
     );
     super.initState();

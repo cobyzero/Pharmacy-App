@@ -1,69 +1,63 @@
-import 'package:get/get.dart';
-import 'package:pharmacy_app/core/bindings/auth_binding.dart';
-import 'package:pharmacy_app/core/bindings/categories_binding.dart';
-import 'package:pharmacy_app/core/bindings/home_binding.dart';
-import 'package:pharmacy_app/core/bindings/onboarding_binding.dart';
-import 'package:pharmacy_app/core/bindings/product_binding.dart';
-import 'package:pharmacy_app/core/bindings/product_check_binding.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pharmacy_app/features/auth/views/login_view.dart';
 import 'package:pharmacy_app/features/auth/views/register_view.dart';
 import 'package:pharmacy_app/features/auth/views/verification_code_view.dart';
+import 'package:pharmacy_app/features/booking/views/booking_view.dart';
 import 'package:pharmacy_app/features/categories/views/categories_view.dart';
 import 'package:pharmacy_app/features/home/views/track_view.dart';
 import 'package:pharmacy_app/features/navigator/navigator_view.dart';
 import 'package:pharmacy_app/features/onboarding/views/onboarding_view.dart';
-import 'package:pharmacy_app/features/product/views/product_check_view.dart';
 import 'package:pharmacy_app/features/product/views/product_view.dart';
 import 'package:pharmacy_app/features/splash/splash_view.dart';
 
-final getRouter = <GetPage>[
-  GetPage(
-    name: "/splash",
-    page: () => const SplashView(),
-  ),
-  GetPage(
-    name: "/onboarding",
-    page: () => const OnboardingView(),
-    binding: OnboardingBinding(),
-  ),
-  GetPage(
-    name: "/register",
-    page: () => const RegisterView(),
-    binding: AuthBinding(),
-  ),
-  GetPage(
-    name: "/login",
-    page: () => const LoginView(),
-    binding: AuthBinding(),
-  ),
-  GetPage(
-    name: "/verification",
-    page: () => const VerificationCodeView(),
-    binding: AuthBinding(),
-  ),
-  GetPage(
-    name: "/navigator",
-    page: () => const NavigatorView(),
-    binding: HomeBinding(),
-  ),
-  GetPage(
-    name: "/track",
-    page: () => const TrackView(),
-    binding: HomeBinding(),
-  ),
-  GetPage(
-    name: "/product",
-    page: () => const ProductView(),
-    binding: ProductBinding(),
-  ),
-  GetPage(
-    name: "/categories",
-    page: () => const CategoriesView(),
-    binding: CategoriesBinding(),
-  ),
-  GetPage(
-    name: "/productCheck",
-    page: () => const ProductCheckView(),
-    binding: ProductCheckBinding(),
-  ),
-];
+final goRouter = GoRouter(
+  initialLocation: "/splash",
+  routes: [
+    GoRoute(
+      path: "/splash",
+      builder: (context, state) => const SplashView(),
+    ),
+    GoRoute(
+      path: "/onboarding",
+      builder: (context, state) => OnboardingView(),
+      routes: [
+        GoRoute(
+          path: "register",
+          builder: (context, state) => const RegisterView(),
+          routes: [
+            GoRoute(
+              path: "verification",
+              builder: (context, state) => const VerificationCodeView(),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: "login",
+          builder: (context, state) => const LoginView(),
+        ),
+      ],
+    ),
+    GoRoute(
+      path: "/home",
+      builder: (context, state) => const NavigatorView(),
+      routes: [
+        GoRoute(
+          path: "track",
+          builder: (context, state) => const TrackView(),
+        ),
+        GoRoute(
+          path: "product",
+          builder: (context, state) => const ProductView(),
+        ),
+        GoRoute(
+          path: "categories",
+          builder: (context, state) => const CategoriesView(),
+        ),
+        GoRoute(
+          path: "booking",
+          builder: (context, state) => const BookingView(),
+        ),
+      ],
+    ),
+  ],
+);

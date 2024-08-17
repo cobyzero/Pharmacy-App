@@ -1,5 +1,5 @@
+import 'package:easy_padding/easy_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
@@ -20,8 +20,8 @@ class StatusItem extends StatelessWidget {
       children: [
         Icon(
           Icons.radio_button_checked,
-          color: active ? Colors.orange : Palette.gray,
-        ).marginOnly(right: 3.w),
+          color: active ? Palette.orange : Palette.gray,
+        ).only(right: 3.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -29,7 +29,7 @@ class StatusItem extends StatelessWidget {
               title,
               fontSize: 14,
               color: active ? Palette.black : Palette.gray,
-            ).marginOnly(bottom: 1.5.h),
+            ).only(bottom: 1.5.h),
             Texts.roman(
               subtitle,
               fontSize: 13,

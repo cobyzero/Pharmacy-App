@@ -11,8 +11,8 @@ class StatusLinear extends StatelessWidget {
       child: VerticalDivider(
         color: Colors.grey.shade400,
         thickness: 1,
-        width: 20,
-        indent: 8,
+        width: 6.w,
+        indent: 1,
         endIndent: 8,
       ),
     );

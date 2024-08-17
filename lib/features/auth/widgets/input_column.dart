@@ -1,5 +1,5 @@
+import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
@@ -23,10 +23,13 @@ class InputColumn extends StatelessWidget {
         Texts.heavy(
           title,
           fontSize: 14,
-        ).marginOnly(bottom: 1.3.h),
+        ).only(bottom: 1.3.h),
         CustomInput(
           hintText: hintText,
-          icon: icon,
+          icon: Icon(
+            icon,
+            size: 20.sp,
+          ),
           controller: controller,
         ),
       ],

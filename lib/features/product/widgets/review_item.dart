@@ -1,5 +1,5 @@
+import 'package:easy_padding/easy_padding.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:sizer/sizer.dart';
 
@@ -25,7 +25,7 @@ class ReviewItem extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   child: Icon(Icons.person),
-                ).marginOnly(right: 3.w),
+                ).only(right: 3.w),
                 const Texts.heavy(
                   "Harry Johnson",
                   fontSize: 14,
@@ -41,7 +41,7 @@ class ReviewItem extends StatelessWidget {
                 Icons.star,
                 color: Palette.primary,
                 size: 15.sp,
-              ).marginOnly(right: 1.w),
+              ).only(right: 1.w),
               const Texts.roman(
                 "4.9",
               ),
